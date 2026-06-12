@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Currently, the master branch is the only supported version.
+Currently, the main branch is the only supported version.
 
 ## Reporting a Vulnerability
 
