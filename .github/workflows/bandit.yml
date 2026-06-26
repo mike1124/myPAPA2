@@ -1,19 +1,23 @@
+---
 name: Bandit SAST Scan
 
-on:
+"on":
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
   schedule:
     - cron: '0 0 * * 0'
 
 jobs:
   bandit:
     permissions:
-      contents: read # for actions/checkout to fetch code
-      security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
-      actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
+      # for actions/checkout to fetch code
+      contents: read
+      # for github/codeql-action/upload-sarif to upload SARIF results
+      security-events: write
+      # only required for a private repository to get the Action run status
+      actions: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
